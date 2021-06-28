@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<windows.h>
+
+
+int main()
+{
+int a,s=20;
+
+				while((s != 0) && (!kbhit()))
+				{
+					printf("\r%d ",s);
+					Sleep(1000);
+					if(s!=0)
+					{
+						s--;
+					}
+
+				}
+				a=getch();
+
+printf("%i",a-48);
+ return 0;
+}

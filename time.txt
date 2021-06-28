@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<windows.h> //windows header is used to implement the sleep operation
+int main()
+{
+	int m=1,s=0;
+				while((s != 0) || (m != 0))
+				{
+					printf("\r%d:%d ",m,s);
+					Sleep(1000);//it is approximately 1 millisecond
+					if(s!=0)
+					{
+						s--;
+					}
+					if(s==0 && m!=0)
+					{
+						s=59;
+						m--;
+					}
+
+				}
+
+}

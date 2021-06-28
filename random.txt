@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main()
+{
+    int alea;
+    srand(time(NULL));
+
+    alea=1+rand()%6;
+    printf("%i",alea);
+    return 0;
+}

@@ -1,0 +1,33 @@
+i=0;
+    r=21;
+    do{
+        g=1;
+    for (j=0;j<l;j++){
+    if (m[i][j]!=pseudo[j]){
+    g=0;
+    }
+    }
+    if (g==0){
+    i++;
+    }
+    }while((g==0)&&(i<=n));
+
+
+    if (g==0){
+    for (j=0;j<30;j++){
+        if(j<l){
+    m[n][j]=pseudo[j];
+        }else{
+        m[n][j]=' ';
+        }
+    }
+    m[n][21]=score+48;
+    n++;
+    }
+
+    if (g==1){
+    for (j=0;j<l;j++){
+    m[i][j]=pseudo[j];
+    }
+    m[i][21]=m[i][21]+score;
+    }

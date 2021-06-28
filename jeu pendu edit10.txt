@@ -1,0 +1,394 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include<windows.h>
+#include <conio.h>
+#include <string.h>
+
+
+int main(){
+    int x;
+
+void pendu(){
+
+
+    char mot1[30]="jour",mot2[30]="voiture",mot3[30]="programme",mot4[30]="carte",mot5[30]="pendu",mot6[30]="aussi";
+    char mot[20],word[30],lettre1[30];
+    char lettre2[30],aux[30];
+    char pseudo[30];
+    char m[30][30];
+    int alea,i,b,j,g,n=0,l,score,p,s,r,x,g1,o,q,tri,s2,s1,score1;
+    char a,k;
+
+
+
+
+
+
+
+
+    do{
+
+
+
+
+
+        s=70;b=0;r=0;
+        lettre1[0]='a';lettre1[1]=' ';lettre1[2]='b';lettre1[3]=' ';lettre1[4]='c';lettre1[5]=' ';lettre1[6]='d';lettre1[7]=' ';lettre1[8]='e';lettre1[9]=' ';lettre1[10]='f';lettre1[11]=' ';lettre1[12]='g';
+        lettre1[13]=' ';lettre1[14]='h';lettre1[15]=' ';lettre1[16]='i';lettre1[17]=' ';lettre1[18]='j';lettre1[19]=' ';lettre1[20]='k';lettre1[21]=' ';lettre1[22]='l';lettre1[23]=' ';lettre1[24]='m';
+       lettre2[0]='n';lettre2[1]=' ';lettre2[2]='o';lettre2[3]=' ';lettre2[4]='p';lettre2[5]=' ';lettre2[6]='q';lettre2[7]=' ';lettre2[8]='r';lettre2[9]=' ';lettre2[10]='s';lettre2[11]=' ';lettre2[12]='t';
+        lettre2[13]=' ';lettre2[14]='u';lettre2[15]=' ';lettre2[16]='v';lettre2[17]=' ';lettre2[18]='w';lettre2[19]=' ';lettre2[20]='x';lettre2[21]=' ';lettre2[22]='y';lettre2[23]=' ';lettre2[24]='z';
+
+
+
+
+
+    printf("donner votre pseudo\n");
+    l=-1;
+    do{
+    l++;
+    p=getch();
+    pseudo[l]=p;
+    printf("%c",pseudo[l]);
+    }while(p != 13);
+    printf("\n");
+
+
+
+
+
+    srand(time(NULL));
+    alea=1+rand()%6;
+
+
+    switch (alea) {
+    case 1:{for(i=0;i<30;i++){mot[i]=mot1[i]; } }
+    break;
+    case 2: {for(i=0;i<30;i++){mot[i]=mot2[i]; }}
+    break;
+    case 3: {for(i=0;i<30;i++){mot[i]=mot3[i]; }}
+    break;
+    case 4: {for(i=0;i<30;i++){mot[i]=mot4[i]; }}
+    break;
+    case 5: {for(i=0;i<30;i++){mot[i]=mot5[i]; }}
+    break;
+    case 6: {for(i=0;i<30;i++){mot[i]=mot6[i]; }}
+    break;
+    }
+
+
+
+
+
+
+
+
+    printf("%s\n",mot);
+    i=7;
+    for (j=0;j<strlen(mot);j++){
+    word[j]='*';
+    }
+
+
+
+
+
+
+
+    while((i != 0)&&(b<strlen(mot)&&(s!=0)) ){
+
+        g=0;
+
+
+
+
+        printf("\nquel est le mot secret?  ");
+        for(j=0;j<strlen(mot);j++){
+            printf("%c",word[j]);
+            }
+       printf("\n");
+
+
+
+
+
+        for(k=0;k<25;k++){
+            for (j=0;j<strlen(mot);j++){
+                if ( (lettre1[k]==a)&&(mot[j]==a) ){
+                    lettre1[k] ='-';
+                        }
+                    }
+            printf("%c",lettre1[k]);
+            }
+
+
+        printf("\n");
+
+
+
+            for(k=0;k<25;k++){
+                for (j=0;j<strlen(mot);j++){
+                    if ( (lettre2[k]==a) && (mot[j]== a) ){
+                        lettre2[k] ='-';
+                        }
+                    }
+                printf("%c",lettre2[k]);
+                }
+
+
+
+
+    printf("\ntaper '?' pour help\n");
+    printf("\nil vous reste %i coups a jouer et \n",i);
+    printf("\n              proposer une lettre :\r");
+    printf("      second");
+
+
+
+
+            while((s != 0) && (!kbhit())){
+					printf("\r%d ",s);
+					Sleep(1000);
+					if(s!=0)
+					{
+						s--;
+					}
+
+				}
+
+
+            if (s!=0){
+                a=getch();
+                printf("   \n%c",a);
+
+                if (a=='?'){
+                j=0;
+                p=0;
+                do{
+                if (word[j]=='*'){
+                p=1;
+                }else{
+                j++;
+                }
+                }while(p==0);
+                a=mot[j];
+                r++;
+                }
+
+                for (j=0;j<strlen(mot);j++){
+                if(a==mot[j]){
+                g=1;
+                }
+                }
+                if (g==0){
+                i--;
+                }
+            }
+
+
+
+
+                for(j=0;j<strlen(mot);j++){
+                    if((a!=word[j])&&(a==mot[j]) ){
+                        b=b+1;
+                        }
+                    if (a == mot[j]){
+                        word[j]=a;
+                        }
+                    }
+
+
+    }
+
+
+    switch (7-i){
+    case 0:score=4-r;
+    break;
+    case 1:score=4-r;
+    break;
+    case 2:score=3-r;
+    break;
+    case 3:score=3-r;
+    break;
+    case 4:score=2-r;
+    break;
+    case 5:score=2-r;
+    break;
+    case 6:score=1-r;
+    break;
+    }
+
+
+
+
+
+
+    if(b==strlen(mot)){
+    printf("\ngagne ! le mot secret etait bien: %s\n et votre scoure est : %i\n",mot,score);
+    }else {if(s==0){
+    printf("\nLe temps expire, reessayez\n"); score=0;
+    }else{if (i==0){
+    printf("\nVous avez epuise vos tentatives, reessayez\n"); score=0;
+    }
+    }
+    }
+
+
+
+
+
+
+   i=0;
+
+    do{
+        g=1;
+    for (j=0;j<l;j++){
+    if (m[i][j]!=pseudo[j]){
+    g=0;
+    }
+    }
+    if (g==0){
+    i++;
+    }
+
+    }while((g==0)&&(i<=n));
+
+
+    if (g==0){
+    for (j=0;j<30;j++){
+        if(j<l){
+    m[n][j]=pseudo[j];
+        }else{
+        m[n][j]=' ';
+        }
+    }
+    m[n][21]=score+48;
+    n++;
+    }
+
+    if (g==1){
+    for (j=0;j<l;j++){
+    m[i][j]=pseudo[j];
+    }
+    m[i][21]=m[i][21]+score;
+    }
+
+
+
+
+
+    do{
+
+    printf("----------------------------\n");
+    printf("1.  rejouter\n2.  verifier score\n3.  classement\n4.  retour au menu preincipale\n5.  quitter l'application\n");
+    printf("----------------------------\n");
+    x=getch();
+    x=x-48;
+    printf("%i\n",x);
+
+
+
+
+    switch (x){
+    case 2:{
+
+            i=0;
+            do{
+            g=1;
+            for (j=0;j<l;j++){
+            if (m[i][j]!=pseudo[j]){
+            g=0;
+            }
+            }
+            if (g==0){
+            i++;
+            }
+
+            }while(g==0);
+            score1=m[i][21]-48;
+            printf("votre score est %i\n",score1);
+    }
+    break;
+    case 3:{
+            tri =0;
+   while(tri==0){
+   tri = 1;
+   for (i=0;i<n-1;i++){
+
+
+   s1=m[i][21]-48;
+
+
+
+   s2=m[i+1][21]-48;
+
+
+   if(s1<s2){
+   for (j=0;j<30;j++){
+   aux[j]=m[i][j];
+   m[i][j]=m[i+1][j];
+   m[i+1][j]=aux[j];
+   }
+   tri=0;
+   }
+
+   }
+   }
+   printf("**********pseudo              score     *******************\n\n\n");
+   for (i=0;i<n;i++){
+       printf("**********");
+   for (j=0;j<30;j++){
+       if (j==21){
+       printf("%i",m[i][j]-48);
+       }else{
+   printf("%c",m[i][j]);
+       }
+   }
+   printf("*******************\n");
+   }
+    };
+    break;
+    case 4:main();
+    break;
+    case 5:exit(0);
+    break;
+    }
+
+
+
+    }while((x==3)|| (x==2));
+
+
+
+    a='@';
+    }while(x==1);
+
+
+
+}
+
+
+    printf("                       --------------------------------------\n");
+    printf("                                 bienvenu au jeu\n");
+    printf("                       --------------------------------------\n\n\n\n");
+    printf("                       --------------------------------------\n");
+    printf("                              veuillez choisir un jeu    \n");
+    printf("                       --------------------------------------\n");
+    printf("                       --------------------------------------\n");
+    printf("                                  1. jeu pendu\n                                  2. jeu motus\n");
+    printf("                       --------------------------------------\n\n\n\n");
+    printf("                       --------------------------------------\n");
+    printf("                                  3.quiter\n");
+    printf("                       --------------------------------------\n");
+    printf("taper ici\n");
+    scanf("%i",&x);
+    switch(x){
+    case 1:pendu();
+    break;
+    case 3:exit(0);
+    break;
+    }
+
+
+return 0;
+}

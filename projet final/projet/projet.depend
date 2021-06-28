@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1607506403 source:c:\users\asus\desktop\langage c\projet\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	<conio.h>
+	<string.h>
+
+1607511659 source:c:\users\asus\desktop\dossier\1lnig\projet asd1\rayen boumnijel amenallah laabidi group 7\projet\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	<conio.h>
+	<string.h>
+

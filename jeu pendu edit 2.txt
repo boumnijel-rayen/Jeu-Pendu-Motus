@@ -1,0 +1,102 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include<windows.h>
+#include <conio.h>
+#include <string.h>
+
+
+
+int main(){
+    char mot1[30]="ballon",mot2[30]="simple",mot3[30]="programme",mot4[30]="carte",mot5[30]="humain",mot6[30]="histoire";
+    char mot[30],word[30],lettre1[30]={'a',' ','b',' ','c',' ','d',' ','e',' ','f',' ','g',' ','h',' ','i',' ',' j',' ','k',' ','l',' ','m'};
+    char lettre2[30]={'n',' ','o',' ','p',' ','q',' ','r',' ','s',' ','t',' ','u',' ','v',' ','w',' ','x',' ','y',' ','z'};
+    char pseudo[30];
+    int alea,i,j,l,s=20;
+    char a,k;
+
+
+
+    printf("donner votre pseudo\n");
+    scanf("%i",&pseudo);
+
+
+    srand(time(NULL));
+    alea=1+rand()%6;
+
+
+    switch (alea) {
+    case 1:{for(i=0;i<30;i++){mot[i]=mot1[i]; } }
+    break;
+    case 2: {for(i=0;i<30;i++){mot[i]=mot2[i]; }}
+    break;
+    case 3: {for(i=0;i<30;i++){mot[i]=mot3[i]; }}
+    break;
+    case 4: {for(i=0;i<30;i++){mot[i]=mot4[i]; }}
+    break;
+    case 5: {for(i=0;i<30;i++){mot[i]=mot5[i]; }}
+    break;
+    case 6: {for(i=0;i<30;i++){mot[i]=mot6[i]; }}
+    break;
+    }
+
+
+    printf("%s\n",mot);
+    i=7;
+    for (j=0;j<strlen(mot);j++){
+    word[j]='*';
+    }
+
+
+
+    while(i != 0){
+    printf("\nquel est le mot secret?  ");
+    for(j=0;j<strlen(mot);j++){
+        if (a == mot[j]){
+        word[j]=a;
+       }
+       printf("%c",word[j]);
+       }
+       printf("\n");
+
+   for(k=0;k<=25;k++){
+       if (lettre1[k]==a){
+        lettre1[k] ='-';
+       }
+       printf("%c",lettre1[k]);
+   }
+   printf("\n");
+   for(k=0;k<=25;k++){
+       if (lettre2[k]==a){
+        lettre2[k] ='-';
+       }
+       printf("%c",lettre2[k]);
+   }
+
+    printf("\nil vous reste %i coups a jouer et \n",i);
+    i--;
+    printf("      second");
+
+
+
+ while((s != 0) && (!kbhit()))
+				{
+					printf("\r%d ",s);
+					Sleep(1000);
+					if(s!=0)
+					{
+						s--;
+					}
+
+				}
+                    if(s==0){
+                    exit(0);
+                    }
+                    a=getch();
+                    printf("   \n%c",a);
+
+
+    }
+
+    return 0;
+}

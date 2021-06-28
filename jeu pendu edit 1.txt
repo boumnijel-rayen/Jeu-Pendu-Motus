@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include<windows.h>
+#include <conio.h>
+
+
+
+
+int main(){
+    char mot1[30]="ballon",mot2[30]="simple",mot3[30]="programme",mot4[30]="carte",mot5[30]="humain",mot6[30]="histoire";
+    char mot[30];
+    char pseudo[30];
+    int alea,i,j,l,s=70,a;
+    printf("donner votre pseudo\n");
+    scanf("%i",&pseudo);
+    srand(time(NULL));
+    alea=1+rand()%6;
+    switch (alea) {
+    case 1:{for(i=0;i<30;i++){mot[i]=mot1[i]; } }
+    break;
+    case 2: {for(i=0;i<30;i++){mot[i]=mot2[i]; }}
+    break;
+    case 3: {for(i=0;i<30;i++){mot[i]=mot3[i]; }}
+    break;
+    case 4: {for(i=0;i<30;i++){mot[i]=mot4[i]; }}
+    break;
+    case 5: {for(i=0;i<30;i++){mot[i]=mot5[i]; }}
+    break;
+    case 6: {for(i=0;i<30;i++){mot[i]=mot6[i]; }}
+    break;
+    }
+    printf("%s\n",mot);
+    i=7;
+
+    while(i != 0){
+    printf("\nquel est le mot secret?  ");
+    for(j=0;j<strlen(mot);j++){printf("*");}
+    printf("\nil vous reste %i coups a jouer et \n",i);
+    i--;
+    printf("      second");
+ while((s != 0) && (!kbhit()))
+				{
+					printf("\r%d ",s);
+					Sleep(1000);
+					if(s!=0)
+					{
+						s--;
+					}
+
+				}
+				a=getch();
+				printf("   \n%i",a-48);
+
+
+    }
+    return 0;
+}
